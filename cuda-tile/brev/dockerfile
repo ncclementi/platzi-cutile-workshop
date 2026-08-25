@@ -57,7 +57,7 @@ RUN pip install --no-cache-dir --root-user-action=ignore \
     torch==2.10.0
 
 # Copy only requirements.txt first for better Docker layer caching.
-COPY tutorials/${ACH_TUTORIAL}/brev/requirements.txt /opt/requirements.txt
+COPY ${ACH_TUTORIAL}/brev/requirements.txt /opt/requirements.txt
 
 # Install Python packages.
 RUN pip install --no-cache-dir --root-user-action=ignore -r /opt/requirements.txt \
@@ -80,6 +80,6 @@ RUN python -m jupyter labextension disable "@jupyterlab/apputils-extension:annou
 
 COPY --chmod=0777 . /accelerated-computing-hub
 
-WORKDIR /accelerated-computing-hub/tutorials/${ACH_TUTORIAL}/notebooks
+WORKDIR /accelerated-computing-hub/${ACH_TUTORIAL}/notebooks
 
 ENTRYPOINT ["/accelerated-computing-hub/brev/entrypoint.bash", "jupyter"]

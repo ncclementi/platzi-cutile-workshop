@@ -1,10 +1,10 @@
 name: &tutorial-name cuda-tile
 
 x-config:
-  dockerfile: &dockerfile tutorials/cuda-tile/brev/dockerfile
-  image: &image ghcr.io/nvidia/cuda-tile-tutorial:latest
-  working-dir: &working-dir /accelerated-computing-hub/tutorials/cuda-tile/notebooks
-  default-jupyter-url: &default-jupyter-url ["/lab/tree/accelerated-computing-hub/tutorials/cuda-tile/notebooks/start.ipynb?file-browser-path=/accelerated-computing-hub/tutorials/cuda-tile/notebooks"]
+  dockerfile: &dockerfile cuda-tile/brev/dockerfile
+  image: &image cuda-tile-tutorial-platzi:latest
+  working-dir: &working-dir /accelerated-computing-hub/cuda-tile/notebooks
+  default-jupyter-url: &default-jupyter-url ["/lab/tree/accelerated-computing-hub/cuda-tile/notebooks/start.ipynb?file-browser-path=/accelerated-computing-hub/cuda-tile/notebooks"]
   gpu-config: &gpu-config
     privileged: true
     ulimits:
@@ -44,9 +44,10 @@ services:
   base:
     <<: [*gpu-config, *common-service]
     image: *image
+    pull_policy: build
     entrypoint: ["/accelerated-computing-hub/brev/entrypoint.bash", "base"]
     build:
-      context: ../../..
+      context: ../..
       dockerfile: *dockerfile
     restart: "no"
   jupyter:
