@@ -15,12 +15,9 @@ you provision and own the instance yourself.
 ## 1. Install the Brev CLI
 
 ```bash
-pixi global install brev
+brew install brevdev/homebrew-brev/brev
 brev --help
 ```
-
-> **Windows:** Brev requires WSL, virtualization enabled in BIOS, and Ubuntu
-> 20.04 from the Microsoft Store.
 
 ## 2. Authenticate with Brev
 
@@ -33,7 +30,7 @@ You'll be asked to confirm your email, then complete authentication in the brows
 ## 3. Set your Brev organization
 
 ```bash
-brev org set <your-org-name>
+brev org set 2026-platzi-conf
 ```
 
 ## 4. Create the instance
