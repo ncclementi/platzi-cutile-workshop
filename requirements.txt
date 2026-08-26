@@ -1,0 +1,9 @@
+
+# CUDA
+numpy>=2.4.6,<3
+numba-cuda-mlir[cu13]==0.5.0
+cupy-cuda13x>=14.1.1,<15
+cutile-python==1.5.0
+cuda-python == 13.3.1
+cuda-cccl[cu13]
+

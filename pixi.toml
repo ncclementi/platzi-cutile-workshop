@@ -1,0 +1,17 @@
+[workspace]
+channels = ["conda-forge"]
+name = "platzi-cutile-workshop"
+platforms = [
+  { name = "linux-64-cuda", platform = "linux-64", cuda = "13" }
+]
+version = "0.1.0"
+
+[dependencies]
+numpy = ">=2.4.6,<3"
+numba-cuda-mlir = "==0.5.0"
+cupy = ">=14.1.1,<15"
+cutile-python = "==1.5.0"
+cuda-python = "==13.3.1"
+cuda-cccl = ">=13.3.1,<14"
+notebook = ">=7.6.0,<8"
+jupyterlab = ">=4.6.1,<5"
